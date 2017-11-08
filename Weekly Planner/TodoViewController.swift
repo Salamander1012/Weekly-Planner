@@ -87,6 +87,8 @@ class TodoViewController: UIViewController {
         
     }
     
+    var enableHaptic = false
+    
     @objc func handleKeyboardNotification(notification: NSNotification) {
         
         if let userInfo = notification.userInfo {
@@ -100,9 +102,12 @@ class TodoViewController: UIViewController {
             
             createTaskButton.setTitle("Add", for: .normal)
             if isKeyboardShowing {
+                enableHaptic = true
                 createTaskButton.setTitle("Add", for: .normal)
             } else {
+                enableHaptic = false
                 createTaskButton.setTitle("", for: .normal)
+                datePickerView.selectItem(0)
             }
             UIView.animate(withDuration: 0, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
                     self.view.layoutIfNeeded()
@@ -188,12 +193,15 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if(tableView.isEqual(scrollView)) {
-            datePickerView.selectItem(0)
             dynamicTaskField.endEditing(true)
             dynamicTaskField.text = ""
+        } else {
+            
         }
         
     }
+    
+    
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         dynamicTaskField.text = ""
@@ -233,8 +241,9 @@ extension TodoViewController: AKPickerViewDelegate, AKPickerViewDataSource {
     func pickerView(_ pickerView: AKPickerView, didSelectItem item: Int) {
         print("Selected item: \(datePickerView.selectedItem)")
         
-        
-        hapticResponse.selectionChanged()
+        if enableHaptic {
+            hapticResponse.selectionChanged()
+        }
     }
     
     
