@@ -149,6 +149,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="createTaskButton" destination="enS-h0-hmN" id="Tr0-kj-oAJ"/>
                         <outlet property="datePickerView" destination="XFc-We-Wo6" id="ect-sY-MpJ"/>
                         <outlet property="dynamicInputView" destination="r6b-aj-R5K" id="3xq-G4-X01"/>
                         <outlet property="dynamicTaskField" destination="t8l-eC-mb5" id="nZT-Es-rGI"/>
