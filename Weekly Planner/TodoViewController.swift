@@ -20,7 +20,7 @@ class TodoViewController: UIViewController {
     @IBOutlet weak var datePickerView: AKPickerView!
     @IBOutlet weak var createTaskButton: UIButton!
     
-    var tasks: [String] = []
+    
     var pickerItems = ["Today", "Tomorrow", "Monday", "Tuesday"]
     
     var dynamicViewBottomConstraint: NSLayoutConstraint?
@@ -122,10 +122,8 @@ class TodoViewController: UIViewController {
             if !(dynamicTaskField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! {
                 
                 let currentSection  = datePickerView.selectedItem
-                tasks.append(dynamicTaskField.text!)
                 sectionsArray[currentSection].tasks.append(dynamicTaskField.text!)
                 let indexPath = IndexPath(row: sectionsArray[currentSection].tasks.count-1, section: currentSection)
-//                let indexPath = IndexPath(row: tasks.count-1, section: 0)
                 tableView.beginUpdates()
                 tableView.insertRows(at: [indexPath], with: .automatic)
                 tableView.endUpdates()
@@ -146,16 +144,14 @@ class TodoViewController: UIViewController {
    
     
     func updateTaskCountLabel() {
-        if tasks.count == 0 {
+        if sectionsArray[0].tasks.count == 0 {
             taskCountLabel.text = "Ayy you have completed all your tasks"
-        } else if tasks.count == 1 {
-            taskCountLabel.text = "You have \(tasks.count) task left"
-        } else if tasks.count > 5 {
-            print("etfff")
-            taskCountLabel.text = "You have \(tasks.count) tasks left, better get to work"
-        } else if tasks.count > 1 {
-            print("asdadsasd")
-            taskCountLabel.text = "You have \(tasks.count) incomplete tasks"
+        } else if sectionsArray[0].tasks.count == 1 {
+            taskCountLabel.text = "You have \(sectionsArray[0].tasks.count) task left"
+        } else if sectionsArray[0].tasks.count > 5 {
+            taskCountLabel.text = "You have \(sectionsArray[0].tasks.count) tasks left, better get to work"
+        } else if sectionsArray[0].tasks.count > 1 {
+            taskCountLabel.text = "You have \(sectionsArray[0].tasks.count) incomplete tasks"
         }
     }
     
