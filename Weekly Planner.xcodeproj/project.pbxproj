@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		C93BD1931FB2B42D00AC9FF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1921FB2B42D00AC9FF1 /* AppDelegate.swift */; };
-		C93BD1951FB2B42D00AC9FF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1941FB2B42D00AC9FF1 /* ViewController.swift */; };
 		C93BD1981FB2B42D00AC9FF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93BD1961FB2B42D00AC9FF1 /* Main.storyboard */; };
 		C93BD19A1FB2B42D00AC9FF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C93BD1991FB2B42D00AC9FF1 /* Assets.xcassets */; };
 		C93BD19D1FB2B42D00AC9FF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C93BD19B1FB2B42D00AC9FF1 /* LaunchScreen.storyboard */; };
 		C93BD1A81FB2B42D00AC9FF1 /* Weekly_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1A71FB2B42D00AC9FF1 /* Weekly_PlannerTests.swift */; };
 		C93BD1B31FB2B42D00AC9FF1 /* Weekly_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1B21FB2B42D00AC9FF1 /* Weekly_PlannerUITests.swift */; };
+		C93BD1C41FB2B47A00AC9FF1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1C01FB2B47900AC9FF1 /* Task.swift */; };
+		C93BD1C51FB2B47A00AC9FF1 /* AKPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1C11FB2B47900AC9FF1 /* AKPickerView.swift */; };
+		C93BD1C61FB2B47A00AC9FF1 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1C21FB2B47900AC9FF1 /* TodoViewController.swift */; };
+		C93BD1C71FB2B47A00AC9FF1 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93BD1C31FB2B47900AC9FF1 /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +39,6 @@
 /* Begin PBXFileReference section */
 		C93BD18F1FB2B42D00AC9FF1 /* Weekly Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weekly Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93BD1921FB2B42D00AC9FF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C93BD1941FB2B42D00AC9FF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C93BD1971FB2B42D00AC9FF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C93BD1991FB2B42D00AC9FF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C93BD19C1FB2B42D00AC9FF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		C93BD1AE1FB2B42D00AC9FF1 /* Weekly PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weekly PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93BD1B21FB2B42D00AC9FF1 /* Weekly_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekly_PlannerUITests.swift; sourceTree = "<group>"; };
 		C93BD1B41FB2B42D00AC9FF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C93BD1C01FB2B47900AC9FF1 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		C93BD1C11FB2B47900AC9FF1 /* AKPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AKPickerView.swift; sourceTree = "<group>"; };
+		C93BD1C21FB2B47900AC9FF1 /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		C93BD1C31FB2B47900AC9FF1 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +103,11 @@
 		C93BD1911FB2B42D00AC9FF1 /* Weekly Planner */ = {
 			isa = PBXGroup;
 			children = (
+				C93BD1C11FB2B47900AC9FF1 /* AKPickerView.swift */,
+				C93BD1C01FB2B47900AC9FF1 /* Task.swift */,
+				C93BD1C31FB2B47900AC9FF1 /* TaskCell.swift */,
+				C93BD1C21FB2B47900AC9FF1 /* TodoViewController.swift */,
 				C93BD1921FB2B42D00AC9FF1 /* AppDelegate.swift */,
-				C93BD1941FB2B42D00AC9FF1 /* ViewController.swift */,
 				C93BD1961FB2B42D00AC9FF1 /* Main.storyboard */,
 				C93BD1991FB2B42D00AC9FF1 /* Assets.xcassets */,
 				C93BD19B1FB2B42D00AC9FF1 /* LaunchScreen.storyboard */,
@@ -259,7 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C93BD1951FB2B42D00AC9FF1 /* ViewController.swift in Sources */,
+				C93BD1C61FB2B47A00AC9FF1 /* TodoViewController.swift in Sources */,
+				C93BD1C41FB2B47A00AC9FF1 /* Task.swift in Sources */,
+				C93BD1C51FB2B47A00AC9FF1 /* AKPickerView.swift in Sources */,
+				C93BD1C71FB2B47A00AC9FF1 /* TaskCell.swift in Sources */,
 				C93BD1931FB2B42D00AC9FF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3YP8P798R;
 				INFOPLIST_FILE = "Weekly Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.salmanfakhri.Weekly-Planner";
@@ -441,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3YP8P798R;
 				INFOPLIST_FILE = "Weekly Planner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.salmanfakhri.Weekly-Planner";
