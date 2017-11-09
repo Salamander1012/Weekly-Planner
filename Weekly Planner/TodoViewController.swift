@@ -29,6 +29,7 @@ class TodoViewController: UIViewController {
         var sectionName: String!
         var tasks: [String] = []
     }
+
     var sectionsArray = [TaskSections]()
     
     var datePickerViewBottomConstraint: NSLayoutConstraint?
@@ -58,9 +59,9 @@ class TodoViewController: UIViewController {
         
         datePickerView.delegate = self
         datePickerView.dataSource = self
-        datePickerView.font = UIFont(name: "Avenir Next", size: 17)!
+        datePickerView.font = UIFont(name: "AvenirNext-DemiBold", size: 17)!
         datePickerView.textColor = UIColor.white
-        datePickerView.highlightedFont = UIFont(name: "Avenir Next Demi Bold", size: 17)!
+        datePickerView.highlightedFont = UIFont(name: "AvenirNext-DemiBold", size: 17)!
         datePickerView.highlightedTextColor = UIColor.black
         datePickerView.interitemSpacing = 5
         datePickerView.selectItem(0)
@@ -135,6 +136,7 @@ class TodoViewController: UIViewController {
                 dynamicTaskField.text = ""
                 dynamicTaskField.endEditing(true)
                 updateTaskCountLabel()
+                datePickerView.selectItem(0)
                 
             }
         }
@@ -143,16 +145,16 @@ class TodoViewController: UIViewController {
  
     @IBAction func dynamicAddTaskTapped(_ sender: Any) {
         addTask()
-        datePickerView.selectItem(0)
+        
     }
     
    
     
     func updateTaskCountLabel() {
         if sectionsArray[0].tasks.count == 0 {
-            taskCountLabel.text = "Ayy you have completed all your tasks"
+            taskCountLabel.text = "Ayy you have completed all your tasks for today"
         } else if sectionsArray[0].tasks.count == 1 {
-            taskCountLabel.text = "You have \(sectionsArray[0].tasks.count) task left"
+            taskCountLabel.text = "You have \(sectionsArray[0].tasks.count) task left for today"
         } else if sectionsArray[0].tasks.count > 5 {
             taskCountLabel.text = "You have \(sectionsArray[0].tasks.count) tasks left, better get to work"
         } else if sectionsArray[0].tasks.count > 1 {
@@ -189,6 +191,14 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionsArray[section].sectionName
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "AvenirNext-DemiBold", size: 17)!
+        header.textLabel?.textColor = UIColor.white
+        header.backgroundView?.backgroundColor = UIColor(red: 41/255, green: 41/255, blue: 41/255, alpha:1.0)
+       
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -244,6 +254,7 @@ extension TodoViewController: AKPickerViewDelegate, AKPickerViewDataSource {
         if enableHaptic {
             hapticResponse.selectionChanged()
         }
+        
     }
     
     
@@ -259,5 +270,9 @@ extension UIFont {
     
     func bold() -> UIFont {
         return withTraits(traits: .traitBold)
+    }
+    
+    func demiBold() -> UIFont {
+        return withTraits(traits: .traitVertical)
     }
 }
